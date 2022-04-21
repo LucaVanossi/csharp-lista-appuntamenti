@@ -21,14 +21,22 @@ namespace ListaAppuntamenti
         this.localitaAppuntamento = localitaAppuntamento;
     }
 
-     public void ControllaData()
+    public void ControllaData()
         {
             if (this.DataeOra < DateTime.Now)
             {
                 throw new InvalidTimeZoneException("Data non valida");
             }
         }
-    
+
+    public override string ToString()
+        {
+            return string.Format("Nome: {0}\nData: {1}\nLocalità:\n{2}",
+            this.Nome,
+            this.DataeOra.ToString("dd.MM.yyyy"),
+            this.localitaAppuntamento);
+        }
+
     }
 
 

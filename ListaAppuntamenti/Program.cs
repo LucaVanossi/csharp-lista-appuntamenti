@@ -21,9 +21,16 @@ for (int i = 0; i < NrAppuntamenti; i++)
     NomeAppuntamento = Console.ReadLine();
     Console.WriteLine("Luogo Appuntamento: ");
     Localita = Console.ReadLine();
-    Appuntamenti.Add(new Appuntamento() { DataeOra = DataAppuntamento, Nome = NomeAppuntamento, localitaAppuntamento = Localita });
+    Appuntamenti.Add(new Appuntamento ( DataAppuntamento, NomeAppuntamento, Localita ));
 
 }
+
+foreach (Appuntamento p in Appuntamenti)
+{
+    Console.WriteLine(p.ToString());
+    Console.WriteLine("-------------------------------");
+}
+
 
 
 
