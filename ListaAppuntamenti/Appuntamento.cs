@@ -16,7 +16,7 @@ namespace ListaAppuntamenti
     public Appuntamento (DateTime DataeOra, string Nome, string localitaAppuntamento)
     {
         this.DataeOra = DataeOra;
-        ControllaData();    
+        //ControllaData();    
         this.Nome = Nome;
         this.localitaAppuntamento = localitaAppuntamento;
     }
@@ -29,13 +29,19 @@ namespace ListaAppuntamenti
             }
         }
 
-    public override string ToString()
+    public void CambiaData(DateTime dataCambiata)
+        {
+            this.DataeOra = dataCambiata;
+        }
+        
+        public override string ToString()
         {
             return string.Format("Nome: {0}\nData: {1}\nLocalità:\n{2}",
             this.Nome,
             this.DataeOra.ToString("dd.MM.yyyy"),
             this.localitaAppuntamento);
         }
+
 
     }
 
